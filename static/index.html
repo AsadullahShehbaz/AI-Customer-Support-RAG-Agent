@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asadullah Shehbaz | AI Engineer & Data Scientist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+  <link rel="stylesheet" href="static/style.css" />
+</head>
+
+<body>
+
+  <!-- ambient blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <!-- ════════════════ NAV ════════════════ -->
+  <nav id="navbar">
+    <a href="#home" class="nav-logo">Asadullah's Portfolio</a>
+
+    <div class="ham" id="ham">
+      <span></span><span></span><span></span>
+    </div>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="nav-hire">Hire Me</a>
+  </nav>
+
+  <!-- ════════════════ HERO ════════════════ -->
+  <section id="home">
+    <div class="hero-inner">
+
+      <!-- LEFT -->
+      <div>
+        <div class="hero-avail">
+          <span class="avail-dot"></span>
+          Available for Freelance &amp; Remote Work
+        </div>
+
+        <h1 class="hero-name">
+          Asadullah<br>
+          <span class="grad">Shehbaz</span>
+        </h1>
+
+        <div class="hero-typed">
+          I'm a <span id="typed-el"></span>
+        </div>
+
+        <p class="hero-desc">
+          <strong>AI Engineer &amp; Data Scientist</strong> building production-ready agentic pipelines, RAG
+          architectures, MLOps workflows, and LLM-powered products.
+          <strong>Kaggle Dataset Grandmaster</strong> ranked <strong>#26 globally</strong> — achieved in just 11 months.
+        </p>
+
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-primary">🚀 View Projects</a>
+          <a href="#contact" class="btn btn-ghost">💬 Let's Talk</a>
+          <button class="btn btn-resume" id="resumeBtn">📄 Download Resume</button>
+        </div>
+
+        <div class="hero-kpis">
+          <div class="kpi"><span class="kpi-num">11+</span><span class="kpi-label">AI Projects</span></div>
+          <div class="kpi"><span class="kpi-num">#26</span><span class="kpi-label">Kaggle Global</span></div>
+          <div class="kpi"><span class="kpi-num">11mo</span><span class="kpi-label">To Grandmaster</span></div>
+          <div class="kpi"><span class="kpi-num">2</span><span class="kpi-label">Internships</span></div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="hero-right">
+        <img src="static/images/profile-image.png" alt="">
+
+        <div class="badge-kaggle">
+          <div class="bk-icon">🏆</div>
+          <div class="bk-info">
+            <div class="bk-title">Kaggle Dataset Grandmaster</div>
+            <div class="bk-sub">+ Notebook Expert · Achieved in 11 months</div>
+          </div>
+          <div class="bk-rank">
+            <div class="bk-num">#26</div>
+            <div class="bk-lbl">Global</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════ ABOUT ════════════════ -->
+  <section id="about" class="sec sec-alt">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-eye">About Me</div>
+        <h2 class="sec-title">Turning <span class="grad">AI Research</span> Into Real Products</h2>
+        <p class="sec-sub">End-to-end AI engineering — from first principles to production deployment.</p>
+      </div>
+
+      <div class="about-grid reveal">
+        <div class="about-card">
+          <p>I'm a <strong>Data Scientist &amp; AI Engineer</strong> specializing in intelligent systems that actually
+            ship. From agentic pipelines with LangGraph and n8n, to fine-tuned transformers and robust MLOps workflows —
+            I deliver complete solutions.</p>
+          <p>Currently in my 8th semester at <strong>GC University Lahore</strong> (BSCS), I've completed <strong>2 ML
+              internships</strong> and built 11+ projects spanning agentic AI, RAG systems, computer vision, NLP, and
+            workflow automation.</p>
+          <p>My philosophy: <strong>AI should solve real problems</strong>. Every project I build has a live demo, clean
+            code, and a focus on measurable business impact — exactly what modern clients need.</p>
+          <div class="about-hl">
+            <div class="ahl-icon">🎯</div>
+            <div class="ahl-text">Achieved <strong>Kaggle Grandmaster</strong> in Datasets (#26 globally) and Notebook
+              tiers — a feat that typically takes years — in just <strong>11 months</strong>.</div>
+          </div>
+        </div>
+
+        <div class="about-stats">
+          <div class="astat">
+            <div class="astat-ico">🚀</div>
+            <div class="astat-num">11+</div>
+            <div class="astat-lbl">Production Projects</div>
+          </div>
+          <div class="astat">
+            <div class="astat-ico">🏆</div>
+            <div class="astat-num">#26</div>
+            <div class="astat-lbl">Kaggle Global Rank</div>
+          </div>
+          <div class="astat">
+            <div class="astat-ico">💼</div>
+            <div class="astat-num">2</div>
+            <div class="astat-lbl">ML Internships</div>
+          </div>
+          <div class="astat">
+            <div class="astat-ico">🎓</div>
+            <div class="astat-num">4</div>
+            <div class="astat-lbl">Certifications</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ SKILLS ════════════════ -->
+  <section id="skills" class="sec">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-eye">Expertise</div>
+        <h2 class="sec-title">Technical <span class="grad">Stack</span></h2>
+        <p class="sec-sub">Battle-tested tools across the full AI engineering pipeline.</p>
+      </div>
+
+      <div class="skills-grid reveal">
+        <div class="sk-card">
+          <div class="sk-head" style="color:var(--c1)"><span>💻</span> Programming</div>
+          <div class="sk-tags"><span class="stag">Python</span><span class="stag">SQL</span><span
+              class="stag">JavaScript</span></div>
+        </div>
+        <div class="sk-card">
+          <div class="sk-head" style="color:#c084fc"><span>🧠</span> ML / Deep Learning</div>
+          <div class="sk-tags"><span class="stag">TensorFlow</span><span class="stag">PyTorch</span><span
+              class="stag">Scikit-learn</span><span class="stag">XGBoost</span></div>
+        </div>
+        <div class="sk-card">
+          <div class="sk-head" style="color:var(--c3)"><span>🤖</span> Agentic AI</div>
+          <div class="sk-tags"><span class="stag">LangChain</span><span class="stag">LangGraph</span><span
+              class="stag">OpenAI API</span><span class="stag">Groq API</span></div>
+        </div>
+        <div class="sk-card">
+          <div class="sk-head" style="color:var(--c4)"><span>⚡</span> Automation</div>
+          <div class="sk-tags"><span class="stag hot">n8n ✦</span><span class="stag hot">ElevenLabs ✦</span><span
+              class="stag hot">Ollama ✦</span><span class="stag">SerpAPI</span></div>
+        </div>
+        <div class="sk-card">
+          <div class="sk-head" style="color:#38bdf8"><span>📊</span> Data Science</div>
+          <div class="sk-tags"><span class="stag">Pandas</span><span class="stag">NumPy</span><span
+              class="stag">Plotly</span><span class="stag">Matplotlib</span></div>
+        </div>
+        <div class="sk-card">
+          <div class="sk-head" style="color:#fb923c"><span>⚙️</span> MLOps</div>
+          <div class="sk-tags"><span class="stag">Docker</span><span class="stag">DVC</span><span
+              class="stag">MLflow</span><span class="stag">CI/CD</span><span class="stag">Git</span></div>
+        </div>
+        <div class="sk-card">
+          <div class="sk-head" style="color:var(--c1)"><span>🔌</span> APIs &amp; Backend</div>
+          <div class="sk-tags"><span class="stag">FastAPI</span><span class="stag">Streamlit</span><span
+              class="stag">SQLAlchemy</span><span class="stag">PostgreSQL</span></div>
+        </div>
+        <div class="sk-card">
+          <div class="sk-head" style="color:#c084fc"><span>🔍</span> Vector &amp; Retrieval</div>
+          <div class="sk-tags"><span class="stag">FAISS</span><span class="stag">ChromaDB</span><span
+              class="stag">Tavily</span><span class="stag">RAG</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ EXPERIENCE ════════════════ -->
+  <section id="experience" class="sec sec-alt">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-eye">Work History</div>
+        <h2 class="sec-title">Professional <span class="grad">Experience</span></h2>
+      </div>
+
+      <div class="timeline reveal">
+        <div class="tl-item">
+          <div class="tl-dot d-c"></div>
+          <div class="tl-card">
+            <div class="tl-header">
+              <div>
+                <div class="tl-role">ML Intern</div>
+                <div class="tl-co">Elevo Pathways</div>
+              </div>
+              <div class="tl-date">Oct 2025 – Nov 2025</div>
+            </div>
+            <ul class="tl-list">
+              <li>Developed and optimized ML models for real-world commercial use cases</li>
+              <li>Collaborated with cross-functional teams to deploy AI solutions in production</li>
+              <li>Improved existing ML pipelines for efficiency, maintainability, and performance</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot d-p"></div>
+          <div class="tl-card">
+            <div class="tl-header">
+              <div>
+                <div class="tl-role">Data Science Intern</div>
+                <div class="tl-co">Skilled Score</div>
+              </div>
+              <div class="tl-date">Aug 2025 – Sep 2025</div>
+            </div>
+            <ul class="tl-list">
+              <li>Built data-driven solutions and analytical workflows for predictive modeling</li>
+              <li>Performed data preprocessing, EDA, and model evaluation across multiple projects</li>
+              <li>Analyzed large datasets to extract trends and actionable business insights</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ PROJECTS ════════════════ -->
+  <section id="projects" class="sec">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-eye">Portfolio</div>
+        <h2 class="sec-title">Featured <span class="grad">Projects</span></h2>
+        <p class="sec-sub">Production-grade AI systems with live demos and measurable impact.</p>
+      </div>
+
+      <div class="projects-grid reveal">
+
+        <!-- HERO: AI VOICE RECEPTIONIST -->
+        <div class="proj-hero">
+          <div class="ph-l">
+            <div class="new-pill">✦ Latest Project</div>
+            <h3 class="ph-title">AI Voice Receptionist<br><span class="grad">for Dental Clinics</span></h3>
+            <p class="ph-desc">A fully autonomous voice agent that handles every incoming clinic call — zero human
+              required. ElevenLabs for natural voice, n8n for orchestration, Groq LLM for reasoning, and Google Sheets
+              for real-time capture.</p>
+            <div class="flow">
+              <div class="f-step">📞 Incoming Call</div><span class="f-arr">→</span>
+              <div class="f-step">🗣️ ElevenLabs</div><span class="f-arr">→</span>
+              <div class="f-step">🧠 Groq LLM</div><span class="f-arr">→</span>
+              <div class="f-step">⚙️ n8n</div><span class="f-arr">→</span>
+              <div class="f-step">📊 Sheets</div>
+            </div>
+            <div class="ph-pills">
+              <span class="ppill pp3">ElevenLabs Voice AI</span>
+              <span class="ppill pp2">n8n Automation</span>
+              <span class="ppill pp1">Groq LLM</span>
+              <span class="ppill pp4">Google Sheets</span>
+            </div>
+          </div>
+          <div class="ph-r">
+            <div class="ph-stats">
+              <div class="phst ps1">
+                <div class="phst-num">0</div>
+                <div class="phst-lbl">Missed Calls</div>
+              </div>
+              <div class="phst ps2">
+                <div class="phst-num">100%</div>
+                <div class="phst-lbl">Automated</div>
+              </div>
+              <div class="phst ps3">
+                <div class="phst-num">24/7</div>
+                <div class="phst-lbl">Available</div>
+              </div>
+              <div class="phst ps4">
+                <div class="phst-num">$0</div>
+                <div class="phst-lbl">Manual Entry</div>
+              </div>
+            </div>
+            <div class="ph-feats">
+              <div class="ph-feat">
+                <div class="phf-ic">📞</div><span>Answers every call automatically with natural human-like AI
+                  voice</span>
+              </div>
+              <div class="ph-feat">
+                <div class="phf-ic">🗣️</div><span>Collects patient details and reason for visit via voice
+                  conversation</span>
+              </div>
+              <div class="ph-feat">
+                <div class="phf-ic">📅</div><span>Books appointments in real-time and confirms availability
+                  instantly</span>
+              </div>
+              <div class="ph-feat">
+                <div class="phf-ic">📊</div><span>Saves all patient records directly to Google Sheets
+                  automatically</span>
+              </div>
+              <div class="ph-feat">
+                <div class="phf-ic">🧠</div><span>Groq LLM handles intent, edge cases, and natural conversation
+                  flow</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Research Agent -->
+        <div class="proj-card">
+          <div class="pcard-top">
+            <span class="ptype pt-a">Agentic AI</span>
+            <div class="plinks">
+              <a class="plink" href="https://github.com/AsadullahShehbaz/Multi-Agent-Research-System-API"
+                target="_blank">GitHub</a>
+              <a class="plink" href="https://ai-researcher-agent-system.streamlit.app/" target="_blank">Demo ↗</a>
+            </div>
+          </div>
+          <div class="pcard-title">AI Research Agent System</div>
+          <p class="pcard-desc">Production-ready multi-agent research system with LangGraph orchestration, FastAPI
+            backend, Docker deployment, and real-time search capabilities.</p>
+          <div class="pcard-tech">
+            <span class="ttag h">LangGraph</span><span class="ttag h">FastAPI</span><span
+              class="ttag">Docker</span><span class="ttag">CI/CD</span><span class="ttag">Streamlit</span>
+          </div>
+        </div>
+
+        <!-- Smart Agentic RAG -->
+        <div class="proj-card">
+          <div class="pcard-top">
+            <span class="ptype pt-r">RAG System</span>
+            <div class="plinks">
+              <a class="plink" href="https://github.com/AsadullahShehbaz/Agentic-RAG-with-Knowledge-Base"
+                target="_blank">GitHub</a>
+              <a class="plink" href="https://smart-agentic-rag.streamlit.app/" target="_blank">Demo ↗</a>
+            </div>
+          </div>
+          <div class="pcard-title">Smart Agentic RAG</div>
+          <p class="pcard-desc">Production-grade conversational AI with semantic long-term memory, FAISS vector search,
+            and PostgreSQL-backed knowledge base for grounded answers.</p>
+          <div class="pcard-tech">
+            <span class="ttag h">LangGraph</span><span class="ttag h">FAISS</span><span
+              class="ttag">PostgreSQL</span><span class="ttag">Docker</span><span class="ttag">FastAPI</span>
+          </div>
+        </div>
+
+        <!-- Personal Assistant -->
+        <div class="proj-card">
+          <div class="pcard-top">
+            <span class="ptype pt-n">n8n · Automation</span>
+            <div class="plinks">
+              <a class="plink" href="https://github.com/AsadullahShehbaz" target="_blank">GitHub</a>
+              <span class="plink off">No Demo</span>
+            </div>
+          </div>
+          <div class="pcard-title">AI Personal Assistant Agent</div>
+          <p class="pcard-desc">Autonomous personal assistant in n8n powered by Ollama (local LLM) with persistent
+            memory — manages Gmail, Calendar, Tasks, Expenses &amp; Docs in one interface.</p>
+          <div class="pcard-feats">
+            <div class="pf"><span>📧</span><span>Gmail read/send management</span></div>
+            <div class="pf"><span>📅</span><span>Google Calendar &amp; Tasks</span></div>
+            <div class="pf"><span>💰</span><span>Expense tracking via Sheets</span></div>
+          </div>
+          <div class="pcard-tech">
+            <span class="ttag" style="color:var(--c4);border-color:rgba(0,255,136,.28)">n8n</span>
+            <span class="ttag" style="color:var(--c4);border-color:rgba(0,255,136,.28)">Ollama</span>
+            <span class="ttag">SerpAPI</span><span class="ttag">Google APIs</span>
+          </div>
+        </div>
+
+        <!-- PR Review Agent -->
+        <div class="proj-card">
+          <div class="pcard-top">
+            <span class="ptype pt-n">n8n · DevOps AI</span>
+            <div class="plinks">
+              <a class="plink" href="https://github.com/AsadullahShehbaz" target="_blank">GitHub</a>
+              <span class="plink off">No Demo</span>
+            </div>
+          </div>
+          <div class="pcard-title">Automated PR Code Review Agent</div>
+          <p class="pcard-desc">Zero-intervention AI that reviews every GitHub PR the moment it opens — posting
+            senior-dev-level feedback as a comment with auto-labeling and coding standards checks.</p>
+          <div class="pcard-tech">
+            <span class="ttag" style="color:var(--c4);border-color:rgba(0,255,136,.28)">n8n</span>
+            <span class="ttag">GPT-4</span><span class="ttag">GitHub API</span><span class="ttag">Google Sheets</span>
+          </div>
+        </div>
+
+        <!-- Blog Multi-Agent -->
+        <div class="proj-card">
+          <div class="pcard-top">
+            <span class="ptype pt-a">Multi-Agent</span>
+            <div class="plinks">
+              <a class="plink" href="https://github.com/AsadullahShehbaz/Blog-Writing-Multi-Agent"
+                target="_blank">GitHub</a>
+              <span class="plink off">No Demo</span>
+            </div>
+          </div>
+          <div class="pcard-title">Blog Writing Multi-Agent System</div>
+          <p class="pcard-desc">Complex LangGraph pipeline with router, research, orchestrator, fan-out worker, and
+            reducer nodes for best-in-class long-form blog generation.</p>
+          <div class="pcard-tech">
+            <span class="ttag h">LangGraph</span><span class="ttag">Groq API</span><span class="ttag">Tavily</span><span
+              class="ttag">Multi-Agent</span>
+          </div>
+        </div>
+
+        <!-- YouTube RAG -->
+        <div class="proj-card">
+          <div class="pcard-top">
+            <span class="ptype pt-r">RAG · NLP</span>
+            <div class="plinks">
+              <a class="plink" href="https://github.com/AsadullahShehbaz/Youtube-RAG-Chatbot-API"
+                target="_blank">GitHub</a>
+              <span class="plink off">Demo Soon</span>
+            </div>
+          </div>
+          <div class="pcard-title">YouTube RAG Chatbot</div>
+          <p class="pcard-desc">Chat with any YouTube video by pasting its URL. Ask AI to extract insights, summarize
+            content, or answer specific questions from hours of video.</p>
+          <div class="pcard-tech">
+            <span class="ttag h">LangChain</span><span class="ttag">ChromaDB</span><span
+              class="ttag">FastAPI</span><span class="ttag">Groq</span><span class="ttag">Streamlit</span>
+          </div>
+        </div>
+
+        <!-- Kidney Disease -->
+        <div class="proj-card">
+          <div class="pcard-top">
+            <span class="ptype pt-c">Computer Vision</span>
+            <div class="plinks">
+              <a class="plink" href="https://github.com/AsadullahShehbaz/Kidney-Disease-Classification-Project"
+                target="_blank">GitHub</a>
+              <a class="plink" href="https://kidney-disease-clasifier.streamlit.app/" target="_blank">Demo ↗</a>
+            </div>
+          </div>
+          <div class="pcard-title">Kidney Disease Classifier</div>
+          <p class="pcard-desc">Production-ready medical imaging classification using VGG16 transfer learning with full
+            MLOps: DVC pipelines, MLflow tracking, Docker, and CI/CD deployment.</p>
+          <div class="pcard-tech">
+            <span class="ttag h">TensorFlow</span><span class="ttag">VGG16</span><span class="ttag">MLflow</span><span
+              class="ttag">DVC</span><span class="ttag">Docker</span>
+          </div>
+        </div>
+
+        <!-- Customer Churn -->
+        <div class="proj-card">
+          <div class="pcard-top">
+            <span class="ptype pt-m">ML · Business</span>
+            <div class="plinks">
+              <a class="plink"
+                href="https://github.com/AsadullahShehbaz/Customer-Churn-Prediction-for-a-Telecom-Company"
+                target="_blank">GitHub</a>
+              <a class="plink" href="https://telecochurnpredictor.streamlit.app/" target="_blank">Demo ↗</a>
+            </div>
+          </div>
+          <div class="pcard-title">Customer Churn Predictor</div>
+          <p class="pcard-desc">End-to-end ML project with deep EDA, feature engineering, XGBoost &amp; LightGBM models,
+            and a business-decision report for telecom retention strategy.</p>
+          <div class="pcard-tech">
+            <span class="ttag h">XGBoost</span><span class="ttag">LightGBM</span><span
+              class="ttag">Scikit-learn</span><span class="ttag">Streamlit</span>
+          </div>
+        </div>
+
+        <!-- NLP Sentiment -->
+        <div class="proj-card">
+          <div class="pcard-top">
+            <span class="ptype pt-p">NLP</span>
+            <div class="plinks">
+              <a class="plink" href="https://github.com/AsadullahShehbaz/NLP-Sentiment-Analyzer"
+                target="_blank">GitHub</a>
+              <span class="plink off">Demo Soon</span>
+            </div>
+          </div>
+          <div class="pcard-title">NLP Sentiment Analyzer</div>
+          <p class="pcard-desc">Fine-tuned DistilBERT on IMDB reviews for sentiment analysis. Deployed on HuggingFace
+            Hub with a Streamlit inference interface for live predictions.</p>
+          <div class="pcard-tech">
+            <span class="ttag h">PyTorch</span><span class="ttag">Transformers</span><span
+              class="ttag">DistilBERT</span><span class="ttag">HuggingFace</span>
+          </div>
+        </div>
+
+        <!-- Book Analytics -->
+        <div class="proj-card">
+          <div class="pcard-top">
+            <span class="ptype pt-m">Data Pipeline</span>
+            <div class="plinks">
+              <a class="plink" href="https://github.com/AsadullahShehbaz/End-to-End-Data-Pipeline-for-Book-Analytics."
+                target="_blank">GitHub</a>
+              <a class="plink" href="https://books-analysis.streamlit.app/" target="_blank">Demo ↗</a>
+            </div>
+          </div>
+          <div class="pcard-title">Book Analytics Dashboard</div>
+          <p class="pcard-desc">End-to-end data pipeline from scraping to interactive Plotly dashboard with SQL
+            analytics and comprehensive book market insights.</p>
+          <div class="pcard-tech">
+            <span class="ttag">Python</span><span class="ttag">Streamlit</span><span class="ttag">SQL</span><span
+              class="ttag">Plotly</span><span class="ttag">Pandas</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ CERTIFICATIONS ════════════════ -->
+  <section id="certifications" class="sec sec-alt">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-eye">Credentials</div>
+        <h2 class="sec-title">Certifications &amp; <span class="grad">Achievements</span></h2>
+        <p class="sec-sub">Verified credentials from leading platforms and institutions.</p>
+      </div>
+
+      <div class="certs-grid reveal">
+
+        <!-- CERT 1 — replace image src -->
+        <div class="cert-card">
+          <div class="cert-img">
+            <!-- <img src="cert-1.jpg" alt="Certificate"> -->
+            <div class="cert-img-placeholder">
+              <span>📜</span>
+              <p>Replace with cert image</p>
+            </div>
+          </div>
+          <div class="cert-body">
+            <div class="cert-issuer">Coursera · DeepLearning.AI</div>
+            <div class="cert-name">Machine Learning Specialization</div>
+            <div class="cert-date">2024</div>
+            <a href="#" class="cert-verify">🔗 Verify Certificate</a>
+          </div>
+        </div>
+
+        <!-- CERT 2 -->
+        <div class="cert-card">
+          <div class="cert-img">
+            <!-- <img src="cert-2.jpg" alt="Certificate"> -->
+            <div class="cert-img-placeholder">
+              <span>📜</span>
+              <p>Replace with cert image</p>
+            </div>
+          </div>
+          <div class="cert-body">
+            <div class="cert-issuer">Coursera · DeepLearning.AI</div>
+            <div class="cert-name">Deep Learning Specialization</div>
+            <div class="cert-date">2024</div>
+            <a href="#" class="cert-verify">🔗 Verify Certificate</a>
+          </div>
+        </div>
+
+        <!-- CERT 3 -->
+        <div class="cert-card">
+          <div class="cert-img">
+            <!-- <img src="cert-3.jpg" alt="Certificate"> -->
+            <div class="cert-img-placeholder">
+              <span>📜</span>
+              <p>Replace with cert image</p>
+            </div>
+          </div>
+          <div class="cert-body">
+            <div class="cert-issuer">Kaggle</div>
+            <div class="cert-name">Dataset Grandmaster — Ranked #26 Globally</div>
+            <div class="cert-date">2025</div>
+            <a href="https://www.kaggle.com/asadullahshehbaz" target="_blank" class="cert-verify">🔗 View profile-image</a>
+          </div>
+        </div>
+
+        <!-- CERT 4 -->
+        <div class="cert-card">
+          <div class="cert-img">
+            <!-- <img src="cert-4.jpg" alt="Certificate"> -->
+            <div class="cert-img-placeholder">
+              <span>📜</span>
+              <p>Replace with cert image</p>
+            </div>
+          </div>
+          <div class="cert-body">
+            <div class="cert-issuer">Platform Name</div>
+            <div class="cert-name">Certificate Name Here</div>
+            <div class="cert-date">2025</div>
+            <a href="#" class="cert-verify">🔗 Verify Certificate</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ CONTACT ════════════════ -->
+  <section id="contact" class="sec">
+    <div class="container">
+      <div class="sec-head reveal">
+        <div class="sec-eye">Let's Work</div>
+        <h2 class="sec-title">Ready to Build <span class="grad">Something Great?</span></h2>
+        <p class="sec-sub">Open to freelance projects, AI roles, and automation solutions.</p>
+      </div>
+
+      <div class="contact-grid reveal">
+        <div class="contact-left">
+          <h3>Let's create<br><span class="grad">real AI impact</span></h3>
+          <p>Whether you need an agentic AI system, RAG pipeline, automation workflow, or end-to-end MLOps solution —
+            I'll build it with production quality and measurable results.</p>
+          <div class="c-links">
+            <a href="mailto:asadullahcreative@gmail.com" class="c-link"><span class="c-link-icon">✉️</span>
+              asadullahcreative@gmail.com</a>
+            <a href="https://github.com/AsadullahShehbaz" target="_blank" class="c-link"><span
+                class="c-link-icon">💻</span> github.com/AsadullahShehbaz</a>
+            <a href="https://www.linkedin.com/in/asadullah-shehbaz-18172a2bb/" target="_blank" class="c-link"><span
+                class="c-link-icon">🔗</span> LinkedIn Profile</a>
+          </div>
+          <button class="btn btn-resume" onclick="downloadResume()">📄 Download Resume</button>
+        </div>
+
+        <div class="contact-form">
+          <form action="https://formsubmit.co/asadullahcreative@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Portfolio Inquiry — Asadullah Shehbaz">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <div class="frow">
+              <div class="fg">
+                <label class="flabel">Full Name *</label>
+                <input type="text" name="name" required placeholder="Your name" class="finput">
+              </div>
+              <div class="fg">
+                <label class="flabel">Email *</label>
+                <input type="email" name="email" required placeholder="your@email.com" class="finput">
+              </div>
+            </div>
+            <div class="fg">
+              <label class="flabel">Subject</label>
+              <input type="text" name="subject" placeholder="Project type / Budget / Timeline" class="finput">
+            </div>
+            <div class="fg">
+              <label class="flabel">Message *</label>
+              <textarea name="message" required placeholder="Describe your project or idea..."
+                class="finput"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Message
+              →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer>
+    <span class="footer-logo">Asadullah's Portfolio</span>
+    <p>© 2025 Asadullah Shehbaz · AI Engineer · Gujranwala, PK</p>
+    <p>Built with precision &amp; passion 🚀</p>
+  </footer>
+
+  <!-- ════════════════ CHATBOT WIDGET ════════════════ -->
+  <!-- FAB button -->
+  <button class="chat-fab" id="chatFab" title="Chat with AI Assistant">
+    <!-- chat icon -->
+    <svg class="ic-chat" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M20 2H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14l4 4V4a2 2 0 0 0-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
+    </svg>
+    <!-- close icon -->
+    <svg class="ic-close" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display:none">
+      <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+    </svg>
+    <div class="fab-ping"></div>
+  </button>
+
+  <!-- Chat panel -->
+  <div class="chat-panel" id="chatPanel">
+    <div class="cp-header">
+      <div class="cp-avatar">🤖</div>
+      <div class="cp-info">
+        <div class="cp-name">Asadullah's AI Assistant</div>
+      </div>
+      <button class="cp-close-btn" id="cpClose">✕</button>
+    </div>
+
+    <div class="cp-msgs" id="cpMsgs">
+      <div class="cm cm-bot">
+        <div class="cm-bubble">👋 Hi! I'm Asadullah's AI assistant. I can answer questions about his skills, projects,
+          experience, and services. How can I help?</div>
+        <div class="cm-time">Just now</div>
+      </div>
+    </div>
+
+    <!-- quick replies -->
+    <div class="cp-quick" id="cpQuick">
+      <button class="qbtn" onclick="quickSend('What are your skills?')">Skills</button>
+      <button class="qbtn" onclick="quickSend('Tell me about your projects')">Projects</button>
+      <button class="qbtn" onclick="quickSend('Are you available for hire?')">Hire</button>
+      <button class="qbtn" onclick="quickSend('What is your Kaggle rank?')">Kaggle</button>
+    </div>
+
+    <div class="cp-input-row">
+      <input type="text" class="cp-input" id="cpInput" placeholder="Ask me anything...">
+      <button class="cp-send" id="cpSend">➤</button>
+    </div>
+  </div>
+
+  <!-- ════════════════ SCRIPTS ════════════════ -->
+  <script src="static/script.js"></script>
+</body>
+
+</html>
