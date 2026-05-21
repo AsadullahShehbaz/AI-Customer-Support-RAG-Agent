@@ -1,11 +1,10 @@
+
+
 # Asadullah Shehbaz · AI-Personal-Portfolio-RAG-Agent
 **AI-powered portfolio with agentic rag chatbot** using FastAPI, LangGraph, Groq LLM, and FAISS vector search.\
 [Try Now](https://asadullahshehbaz.up.railway.app/)
 
-<video width="800" controls autoplay loop muted>
-  <source src="https://raw.githubusercontent.com/AsadullahShehbaz/AI-Personal-Portfolio-RAG-Agent/main/project-demo.mp4" type="video/mp4">
-</video>
-
+[![Build an AI Portfolio Assistant with LangGraph + Groq + FAISS + FastAPI + JS](https://img.youtube.com/vi/f4d2UizRi9g/0.jpg)](https://youtu.be/f4d2UizRi9g)
 
 [![Hero Section](hero-section.png)](https://asadullahshehbaz.up.railway.app/ "target=_blank")
 [![About Section](about-section.png)](https://asadullahshehbaz.up.railway.app/ "target=_blank")
