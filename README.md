@@ -4,11 +4,9 @@
 **AI-powered portfolio with agentic rag chatbot** using FastAPI, LangGraph, Groq LLM, and FAISS vector search.\
 [Try Now](https://asadullahshehbaz.up.railway.app/)
 
-[![Build an AI Portfolio Assistant with LangGraph + Groq + FAISS + FastAPI + JS](https://img.youtube.com/vi/f4d2UizRi9g/0.jpg)](https://youtu.be/f4d2UizRi9g)
-
-[![Hero Section](hero-section.png)](https://asadullahshehbaz.up.railway.app/ "target=_blank")
-[![About Section](about-section.png)](https://asadullahshehbaz.up.railway.app/ "target=_blank")
-[![AI Assistant](ai-assistant.png)](https://asadullahshehbaz.up.railway.app/ "target=_blank")
+[![Hero Section](hero-section.png)](https://youtu.be/f4d2UizRi9g "target=_blank")
+[![About Section](about-section.png)](https://youtu.be/f4d2UizRi9g "target=_blank")
+[![AI Assistant](ai-assistant.png)](https://youtu.be/f4d2UizRi9g "target=_blank")
 
 ---
 
