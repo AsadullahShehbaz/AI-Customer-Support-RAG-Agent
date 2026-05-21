@@ -7,6 +7,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
+
+
 *.so
 .Python
 pip-log.txt
@@ -16,7 +18,10 @@ pip-delete-this-directory.txt
 .ruff_cache/
 .pytype/
 pytype-output/
-
+# FAISS vector store
+faiss_index/
+*.faiss
+*.pkl
 # ── Virtual environments ────────────────────
 .env
 .venv

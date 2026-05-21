@@ -47,17 +47,22 @@ def load_pdf(path: str):
     print(f"✅ Loaded {len(docs)} pages → {len(chunks)} chunks from PDF")
     return chunks
 
-
+VECTOR_STORE_PATH = "./faiss_index"
 # ── 4. Build FAISS vector store ─────────────
 def build_vector_store(chunks):
     embeddings = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-mpnet-base-v2"
     )
-    vector_store = FAISS.from_documents(chunks, embeddings)
-    retriever = vector_store.as_retriever(
-        search_type="similarity",
-        search_kwargs={"k": 4}
-    )
+    if os.path.exists(VECTOR_STORE_PATH):
+        # LOAD existing
+        vector_store = FAISS.load_local(...)
+    else:
+        vector_store = FAISS.from_documents(chunks, embeddings)
+        vector_store.save_local(VECTOR_STORE_PATH)
+        retriever = vector_store.as_retriever(
+            search_type="similarity",
+            search_kwargs={"k": 4}
+        )
     print("✅ Vector store ready")
     return retriever
 
