@@ -1,6 +1,7 @@
 # ─────────────────────────────────────────────
 #  rag_agent.py  —  RAG logic for portfolio chatbot
 #  Uses: LangGraph + Groq LLM + FAISS + HuggingFace embeddings
+#  NEW: Saves FAISS index to disk, loads on restart
 # ─────────────────────────────────────────────
 
 # ── 1. Imports ──────────────────────────────
@@ -27,71 +28,67 @@ logger = logging.basicConfig(
     ]
 )
 
-load_dotenv()  # loads GROQ_API_KEY from your .env file
-
+load_dotenv()
 
 # ── 2. LLM setup ────────────────────────────
-# Make sure your .env has: GROQ_API_KEY=your_key_here
-llm = ChatGroq(model="openai/gpt-oss-120b")   # free & fast Groq model
+llm = ChatGroq(model="openai/gpt-oss-120b")
 
+# ── 3. Configuration ────────────────────────
+PDF_PATH = "./resume.pdf"
+VECTOR_STORE_PATH = "./faiss_index"  # Folder to save/load FAISS index
+embeddings = HuggingFaceEmbeddings(
+    model_name="sentence-transformers/all-mpnet-base-v2"
+)
 
-# ── 3. Load & chunk the PDF ─────────────────
-PDF_PATH = "./resume.pdf"   # put your resume PDF next to this file
-
-def load_pdf(path: str):
-    print(f"📄 Loading PDF: {path}")
-    loader = PyPDFLoader(path)
-    docs = loader.load()
-    splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-    chunks = splitter.split_documents(docs)
-    print(f"✅ Loaded {len(docs)} pages → {len(chunks)} chunks from PDF")
-    return chunks
-
-VECTOR_STORE_PATH = "./faiss_index"
-# ── 4. Build FAISS vector store ─────────────
-def build_vector_store(chunks):
-    embeddings = HuggingFaceEmbeddings(
-        model_name="sentence-transformers/all-mpnet-base-v2"
-    )
+# ── 4. Load or create vector store ──────────
+def get_vector_store():
+    """Load existing FAISS index or create new one from PDF"""
+    
     if os.path.exists(VECTOR_STORE_PATH):
-        # LOAD existing
-        vector_store = FAISS.load_local(...)
+        print(f"📂 Loading existing vector store from {VECTOR_STORE_PATH}")
+        vector_store = FAISS.load_local(
+            VECTOR_STORE_PATH, 
+            embeddings, 
+            allow_dangerous_deserialization=True
+        )
+        print("✅ Vector store loaded from disk")
     else:
+        print(f"📄 Creating new vector store from {PDF_PATH}")
+        loader = PyPDFLoader(PDF_PATH)
+        docs = loader.load()
+        splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+        chunks = splitter.split_documents(docs)
+        print(f"✅ Loaded {len(docs)} pages → {len(chunks)} chunks")
+        
         vector_store = FAISS.from_documents(chunks, embeddings)
         vector_store.save_local(VECTOR_STORE_PATH)
-        retriever = vector_store.as_retriever(
-            search_type="similarity",
-            search_kwargs={"k": 4}
-        )
-    print("✅ Vector store ready")
+        print(f"✅ Vector store saved to {VECTOR_STORE_PATH}")
+    
+    retriever = vector_store.as_retriever(
+        search_type="similarity",
+        search_kwargs={"k": 4}
+    )
     return retriever
 
-
-# ── 5. RAG tool (used by LangGraph agent) ───
-# We build the tool after we have the retriever
+# ── 5. RAG tool ─────────────────────────────
 def make_rag_tool(retriever):
-
     @tool
     def rag_tool(query: str) -> dict:
         """Retrieve relevant information about Asadullah from his resume PDF."""
         results = retriever.invoke(query)
         context = [doc.page_content for doc in results]
         return {"query": query, "context": context}
-
     return rag_tool
 
-
-# ── 6. LangGraph state ───────────────────────
+# ── 6. LangGraph state ──────────────────────
 class ChatState(TypedDict):
     messages: Annotated[list[BaseMessage], add_messages]
-
 
 # ── 7. Build the LangGraph chatbot ──────────
 def build_chatbot(rag_tool):
     tools = [rag_tool]
     llm_with_tools = llm.bind_tools(tools)
 
-    # System prompt — tells the LLM who it is
     SYSTEM_PROMPT = """You are a helpful AI assistant of Asadullah Shehbaz.
 Answer visitor questions about Asadullah's skills, projects, experience, certifications, and services.
 Always use the rag_tool to fetch accurate information from his resume.
@@ -106,7 +103,6 @@ Be friendly, concise, and professional. If you don't know something, say so hone
 
     tool_node = ToolNode(tools)
 
-    # Build graph
     graph = StateGraph(ChatState)
     graph.add_node("chat_node", chat_node)
     graph.add_node("tools", tool_node)
@@ -118,42 +114,30 @@ Be friendly, concise, and professional. If you don't know something, say so hone
     print("✅ LangGraph chatbot compiled")
     return chatbot
 
-
-# ── 8. Main function to get a reply ─────────
+# ── 8. Get reply ────────────────────────────
 def get_reply(chatbot, user_message: str) -> str:
-    """Send a message and get the AI reply as a string."""
     response = chatbot.invoke({
         "messages": [HumanMessage(content=user_message)]
     })
     return response["messages"][-1].content
 
-
-# ── 9. One-time initialization ───────────────
-# Called once at app startup — not on every request
+# ── 9. One-time initialization ──────────────
 def init_rag_chatbot():
-
-    chunks = load_pdf(PDF_PATH)
-    print(f"Loaded {len(chunks)} chunks from PDF")
-    retriever = build_vector_store(chunks)
-    print(f" Vector store ready")
+    retriever = get_vector_store()
     rag_tool = make_rag_tool(retriever)
-    print(f" RAG tool ready")
     chatbot = build_chatbot(rag_tool)
-    print(f"Chatbot ready")
     return chatbot
 
+# ── 10. CLI test ────────────────────────────
 if __name__ == "__main__":
-    
-    chunks = load_pdf(PDF_PATH)
-    print(f"Loaded {len(chunks)} chunks from PDF")
-    retriever = build_vector_store(chunks)
-    print(f" Vector store ready")
+    retriever = get_vector_store()
     rag_tool = make_rag_tool(retriever)
-    print(f" RAG tool ready")
     chatbot = build_chatbot(rag_tool)
-    print(f"Chatbot ready")
-
+    print("Chatbot ready! Type 'quit' to exit.")
+    
     while True:
         user_message = input("You: ")
+        if user_message.lower() == 'quit':
+            break
         reply = get_reply(chatbot, user_message)
         print("AI:", reply)
