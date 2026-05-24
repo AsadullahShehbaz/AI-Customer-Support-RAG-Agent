@@ -44,7 +44,7 @@ console.log('✅ Scroll reveal initialized');
 
 /* ── RESUME DOWNLOAD ── */
 function downloadResume(){
-  const url='YOUR_RESUME_PDF_URL_HERE';
+  const url='/static/images/Asadullah_Shehbaz_Resume.pdf';
   console.log('📄 Downloading resume...');
   const a=document.createElement('a');
   a.href=url;a.download='Asadullah_Shehbaz_Resume.pdf';a.target='_blank';
